@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: spring-boot-apps-eurekaserver-1-1
     prefer-ip-address: true
   client:
     registerWithEureka: false
