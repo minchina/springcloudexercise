@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://spring-boot-apps-eurekaserver-1-1:8761/eureka/
 server:
   port: 8762
 spring:
