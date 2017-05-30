@@ -1,9 +1,10 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://spring-boot-apps-eurekaserver-1-1:8761/eureka/
+      defaultZone: http://spring-boot-apps-eureka-server-1:8761/eureka/
 server:
   port: 8762
+  context-path: /services
 spring:
   application:
     name: service -hi
