@@ -1,12 +1,32 @@
+---
+spring:
+  application:
+    name: micrpservice-discovery-eureka-ha
+---
+spring:
+  profiles: peer1
 server:
   port: 8761
-
 eureka:
   instance:
-    hostname: spring-boot-apps-eureka-server-1
-    prefer-ip-address: true
+     hostname: peer1
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+     registerWithEureka: false
+     fetchRegistry: false
+     serviceUrl:
+         defaultZone: http://peer2:8762/eureka/
+---
+
+spring:
+  profiles: peer2
+eureka:
+  instance:
+     hostname: peer2
+  client:
+     registerWithEureka: false
+     fetchRegistry: false
+     serviceUrl:
+         defaultZone: http://peer1:8761/eureka/
+server:
+  port: 8762
+
